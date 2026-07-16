@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "siteName": "LocBed",
+    "tagline": "Réservez en direct. Sans commission. En toute confiance.",
+    "description": "LocBed est la plateforme de réservation de logements entre particuliers sans commission. Les propriétaires paient un abonnement fixe, les voyageurs réservent en direct."
+  },
+  "nav": {
+    "explore": "Explorer",
+    "howItWorks": "Comment ça marche",
+    "becomeHost": "Devenir propriétaire",
+    "login": "Connexion",
+    "register": "Créer un compte",
+    "dashboard": "Tableau de bord",
+    "myListings": "Mes logements",
+    "messages": "Messages",
+    "favorites": "Favoris",
+    "bookings": "Réservations",
+    "subscription": "Abonnement",
+    "profile": "Profil",
+    "logout": "Déconnexion",
+    "admin": "Administration"
+  },
+  "home": {
+    "heroTitle": "Réservez en direct. Sans commission.",
+    "heroSubtitle": "LocBed met en relation voyageurs et propriétaires, sans intermédiaire sur le paiement.",
+    "searchPlaceholder": "Où souhaitez-vous partir ?",
+    "searchCta": "Rechercher"
+  },
+  "auth": {
+    "login": "Connexion",
+    "register": "Créer un compte",
+    "email": "Adresse e-mail",
+    "password": "Mot de passe",
+    "continueWithGoogle": "Continuer avec Google",
+    "continueWithApple": "Continuer avec Apple",
+    "continueWithFacebook": "Continuer avec Facebook",
+    "chooseRole": "Vous êtes...",
+    "roleTraveler": "Voyageur",
+    "roleOwner": "Propriétaire"
+  },
+  "roles": {
+    "voyageur": "Voyageur",
+    "proprietaire": "Propriétaire",
+    "admin": "Administrateur"
+  },
+  "footer": {
+    "rights": "Tous droits réservés."
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "siteName": "LocBed",
+    "tagline": "Book direct. No commission. Full trust.",
+    "description": "LocBed is the peer-to-peer home rental platform with no booking commission. Owners pay a flat subscription, travelers book direct."
+  },
+  "nav": {
+    "explore": "Explore",
+    "howItWorks": "How it works",
+    "becomeHost": "Become a host",
+    "login": "Log in",
+    "register": "Sign up",
+    "dashboard": "Dashboard",
+    "myListings": "My listings",
+    "messages": "Messages",
+    "favorites": "Favorites",
+    "bookings": "Bookings",
+    "subscription": "Subscription",
+    "profile": "Profile",
+    "logout": "Log out",
+    "admin": "Admin"
+  },
+  "home": {
+    "heroTitle": "Book direct. No commission.",
+    "heroSubtitle": "LocBed connects travelers and owners directly, with no middleman on payment.",
+    "searchPlaceholder": "Where do you want to go?",
+    "searchCta": "Search"
+  },
+  "auth": {
+    "login": "Log in",
+    "register": "Sign up",
+    "email": "Email address",
+    "password": "Password",
+    "continueWithGoogle": "Continue with Google",
+    "continueWithApple": "Continue with Apple",
+    "continueWithFacebook": "Continue with Facebook",
+    "chooseRole": "You are...",
+    "roleTraveler": "Traveler",
+    "roleOwner": "Owner"
+  },
+  "roles": {
+    "voyageur": "Traveler",
+    "proprietaire": "Owner",
+    "admin": "Admin"
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  }
+}
