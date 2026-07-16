@@ -14,6 +14,8 @@ export function SiteFooter() {
           <Link href="/">{t("nav.explore")}</Link>
           <Link href="/comment-ca-marche">{t("nav.howItWorks")}</Link>
           <Link href="/devenir-proprietaire">{t("nav.becomeHost")}</Link>
+          <Link href="/blog">Blog</Link>
+          <Link href="/faq">FAQ</Link>
         </nav>
         <p>
           © {new Date().getFullYear()} LocBed. {t("footer.rights")}

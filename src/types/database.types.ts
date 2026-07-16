@@ -84,6 +84,66 @@ export type Database = {
         }
         Relationships: []
       }
+      blog_posts: {
+        Row: {
+          audience: string
+          author_id: string | null
+          content: string
+          cover_image_path: string | null
+          created_at: string
+          excerpt: string | null
+          id: string
+          published_at: string | null
+          slug: string
+          status: Database["public"]["Enums"]["blog_post_status"]
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          audience?: string
+          author_id?: string | null
+          content: string
+          cover_image_path?: string | null
+          created_at?: string
+          excerpt?: string | null
+          id?: string
+          published_at?: string | null
+          slug: string
+          status?: Database["public"]["Enums"]["blog_post_status"]
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          audience?: string
+          author_id?: string | null
+          content?: string
+          cover_image_path?: string | null
+          created_at?: string
+          excerpt?: string | null
+          id?: string
+          published_at?: string | null
+          slug?: string
+          status?: Database["public"]["Enums"]["blog_post_status"]
+          title?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "blog_posts_author_id_fkey"
+            columns: ["author_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "blog_posts_author_id_fkey"
+            columns: ["author_id"]
+            isOneToOne: false
+            referencedRelation: "public_profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       booking_requests: {
         Row: {
           counter_price: number | null
@@ -294,6 +354,33 @@ export type Database = {
           id?: string
           name?: string
           slug?: string
+        }
+        Relationships: []
+      }
+      faq_items: {
+        Row: {
+          answer: string
+          audience: string
+          created_at: string
+          id: string
+          position: number
+          question: string
+        }
+        Insert: {
+          answer: string
+          audience?: string
+          created_at?: string
+          id?: string
+          position?: number
+          question: string
+        }
+        Update: {
+          answer?: string
+          audience?: string
+          created_at?: string
+          id?: string
+          position?: number
+          question?: string
         }
         Relationships: []
       }
@@ -926,6 +1013,74 @@ export type Database = {
           },
         ]
       }
+      reports: {
+        Row: {
+          created_at: string
+          details: string | null
+          id: string
+          reason: string
+          reporter_id: string
+          resolved_at: string | null
+          resolved_by: string | null
+          status: Database["public"]["Enums"]["report_status"]
+          target_id: string
+          target_type: Database["public"]["Enums"]["report_target_type"]
+        }
+        Insert: {
+          created_at?: string
+          details?: string | null
+          id?: string
+          reason: string
+          reporter_id: string
+          resolved_at?: string | null
+          resolved_by?: string | null
+          status?: Database["public"]["Enums"]["report_status"]
+          target_id: string
+          target_type: Database["public"]["Enums"]["report_target_type"]
+        }
+        Update: {
+          created_at?: string
+          details?: string | null
+          id?: string
+          reason?: string
+          reporter_id?: string
+          resolved_at?: string | null
+          resolved_by?: string | null
+          status?: Database["public"]["Enums"]["report_status"]
+          target_id?: string
+          target_type?: Database["public"]["Enums"]["report_target_type"]
+        }
+        Relationships: [
+          {
+            foreignKeyName: "reports_reporter_id_fkey"
+            columns: ["reporter_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "reports_reporter_id_fkey"
+            columns: ["reporter_id"]
+            isOneToOne: false
+            referencedRelation: "public_profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "reports_resolved_by_fkey"
+            columns: ["resolved_by"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "reports_resolved_by_fkey"
+            columns: ["resolved_by"]
+            isOneToOne: false
+            referencedRelation: "public_profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       review_photos: {
         Row: {
           id: string
@@ -1230,6 +1385,7 @@ export type Database = {
       custom_access_token_hook: { Args: { event: Json }; Returns: Json }
     }
     Enums: {
+      blog_post_status: "draft" | "published"
       booking_request_status:
         | "pending"
         | "accepted"
@@ -1240,6 +1396,8 @@ export type Database = {
         | "waitlisted"
       listing_status: "draft" | "published" | "archived" | "suspended"
       listing_type: "appartement" | "maison"
+      report_status: "open" | "reviewing" | "resolved" | "dismissed"
+      report_target_type: "listing" | "profile" | "review" | "message"
       review_status: "pending" | "published" | "rejected" | "hidden"
       review_type: "listing_review" | "traveler_review"
       subscription_status:
@@ -1831,6 +1989,7 @@ export const Constants = {
   },
   public: {
     Enums: {
+      blog_post_status: ["draft", "published"],
       booking_request_status: [
         "pending",
         "accepted",
@@ -1842,6 +2001,8 @@ export const Constants = {
       ],
       listing_status: ["draft", "published", "archived", "suspended"],
       listing_type: ["appartement", "maison"],
+      report_status: ["open", "reviewing", "resolved", "dismissed"],
+      report_target_type: ["listing", "profile", "review", "message"],
       review_status: ["pending", "published", "rejected", "hidden"],
       review_type: ["listing_review", "traveler_review"],
       subscription_status: [
@@ -1873,3 +2034,6 @@ export type ReviewType = Database["public"]["Enums"]["review_type"]
 export type ReviewStatus = Database["public"]["Enums"]["review_status"]
 export type SubscriptionStatus = Database["public"]["Enums"]["subscription_status"]
 export type VerificationStatus = Database["public"]["Enums"]["verification_status"]
+export type BlogPostStatus = Database["public"]["Enums"]["blog_post_status"]
+export type ReportStatus = Database["public"]["Enums"]["report_status"]
+export type ReportTargetType = Database["public"]["Enums"]["report_target_type"]

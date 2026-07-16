@@ -16,8 +16,8 @@ const NAV_ITEMS: DashboardNavItem[] = [
   { href: "/admin/utilisateurs", label: "Utilisateurs", icon: Users },
   { href: "/admin/logements", label: "Logements", icon: Building2 },
   { href: "/admin/abonnements", label: "Abonnements", icon: CreditCard },
-  { href: "/admin/blog", label: "Blog", icon: FileText, disabled: true },
-  { href: "/admin/faq", label: "FAQ", icon: HelpCircle, disabled: true },
+  { href: "/admin/blog", label: "Blog", icon: FileText },
+  { href: "/admin/faq", label: "FAQ", icon: HelpCircle },
   { href: "/admin/signalements", label: "Signalements", icon: Flag, disabled: true },
   { href: "/admin/logs", label: "Logs", icon: ScrollText, disabled: true },
 ];
